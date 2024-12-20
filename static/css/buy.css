@@ -1,0 +1,48 @@
+.view_cars,
+.view_bikes {
+    text-align: center;
+}
+
+.vehicle-table {
+    width: 30%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.header-row {
+    background-color: gray;
+    text-align: center;
+    color: white;
+}
+
+.data-rows {
+    background-color: darkgray;
+    text-align: center;
+}
+
+.id-column {
+    width: 10%;
+}
+
+.brand-column {
+    width: 30%;
+}
+
+.model-column {
+    width: 60%;
+}
+
+.vehicle-table th,
+.vehicle-table td {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+.back-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form{
+    text-align: center;
+}

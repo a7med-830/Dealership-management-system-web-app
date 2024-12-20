@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="view_cars">
+    <h3>Available cars</h3>
+    <div class="view_table">
+        <table class="vehicle-table">
+            <tr class="header-row">
+                <th class="id-column">ID</th>
+                <th class="brand-column">Brand</th>
+                <th class="model-column">Model</th>
+            </tr>
+            {% for car in cars %}
+            <tr class="data-rows">
+                <td class="id-column">{{ car[0] }}</td>
+                <td class="brand-column">{{ car[1] }}</td>
+                <td class="model-column">{{ car[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div class="view_bikes">
+    <h3>Available bikes</h3>
+    <div class="view_table">
+        <table class="vehicle-table">
+            <tr class="header-row">
+                <th class="id-column">ID</th>
+                <th class="brand-column">Brand</th>
+                <th class="model-column">Model</th>
+            </tr>
+            {% for bike in bikes %}
+            <tr class="data-rows">
+                <td class="id-column">{{ bike[0] }}</td>
+                <td class="brand-column">{{ bike[1] }}</td>
+                <td class="model-column">{{ bike[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div class="back-button">
+    <br>
+    <a href="/">
+        <button>Get back to main menu</button>
+    </a><br><br>
+</div>
+{% endblock %}

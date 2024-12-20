@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Tahoma;
+    background-color: #EEE;
+}
+.page_head{
+    text-align: center;
+}
+
+.main_menu{
+    text-align: center;
+}
