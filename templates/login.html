@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% block body %}
-<form>
-    <label for="mpass">manger password :</label>
-    <input type="text" id="mpass" name="Manger password" placeholder="your password">
-
+<form method="POST" action="" id="form-border">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Login as manger</legend>
+        <div class="form-group input-field">
+            {{ form.password.label(class="form-control-label") }}<br>
+            {{ form.password(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn") }}
+        </div>
+    </fieldset>
 </form>
-<a href="/manger">
-    <button>login</button>
-</a>
 {% endblock %}

@@ -121,7 +121,7 @@ def update_vehicle_availability(vehicle_type, vehicle_id, is_available):
     conn.commit()
     conn.close()
 
-def add_purchase(customer_name, customer_phone, vehicle_id, vehicle_type):
+def add_purchase_to_db(customer_name, customer_phone, vehicle_id, vehicle_type):
     conn = connect_to_db()
     cursor = conn.cursor()
 
@@ -132,6 +132,15 @@ def add_purchase(customer_name, customer_phone, vehicle_id, vehicle_type):
     conn.commit()
     conn.close()
 
+def check_availability(vehicle_id, table_name):
+    conn = connect_to_db()
+    cursor = conn.cursor()
+    table_name = "Cars" if table_name == "Car" else "Bikes" 
+    cursor.execute(f"SELECT availability FROM {table_name} WHERE id = ?", (vehicle_id,))
+    result = cursor.fetchone()
+    is_available = result[0]
+    
+    return is_available
 
 def drop_table():
     conn = connect_to_db()

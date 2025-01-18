@@ -1,46 +1,85 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="view_cars">
-    <h3>Available cars</h3>
-    <div class="view_table">
-        <table class="vehicle-table">
-            <tr class="header-row">
-                <th class="id-column">ID</th>
-                <th class="brand-column">Brand</th>
-                <th class="model-column">Model</th>
-            </tr>
-            {% for car in cars %}
-            <tr class="data-rows">
-                <td class="id-column">{{ car[0] }}</td>
-                <td class="brand-column">{{ car[1] }}</td>
-                <td class="model-column">{{ car[2] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+<div id="tables">
+    <div class="view_cars">
+        <h3>Available cars</h3>
+        <div class="view_table">
+            <table class="vehicle-table">
+                <tr class="header-row">
+                    <th class="id-column">ID</th>
+                    <th class="brand-column">Brand</th>
+                    <th class="model-column">Model</th>
+                </tr>
+                {% for car in cars %}
+                <tr class="data-rows">
+                    <td class="id-column">{{ car[0] }}</td>
+                    <td class="brand-column">{{ car[1] }}</td>
+                    <td class="model-column">{{ car[2] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="view_bikes">
+        <h3>Available bikes</h3>
+        <div class="view_table">
+            <table class="vehicle-table">
+                <tr class="header-row">
+                    <th class="id-column">ID</th>
+                    <th class="brand-column">Brand</th>
+                    <th class="model-column">Model</th>
+                </tr>
+                {% for bike in bikes %}
+                <tr class="data-rows">
+                    <td class="id-column">{{ bike[0] }}</td>
+                    <td class="brand-column">{{ bike[1] }}</td>
+                    <td class="model-column">{{ bike[2] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
 </div>
 
-<div class="view_bikes">
-    <h3>Available bikes</h3>
-    <div class="view_table">
-        <table class="vehicle-table">
-            <tr class="header-row">
-                <th class="id-column">ID</th>
-                <th class="brand-column">Brand</th>
-                <th class="model-column">Model</th>
-            </tr>
-            {% for bike in bikes %}
-            <tr class="data-rows">
-                <td class="id-column">{{ bike[0] }}</td>
-                <td class="brand-column">{{ bike[1] }}</td>
-                <td class="model-column">{{ bike[2] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group" id="form-border">
+        <legend class="border-bottom">Buy</legend>
+        <div class="form-group">
+            {{ form.customer_name.label(class="form-control-label") }}
+            {{ form.customer_name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.phone.label(class="form-control-label") }}
+            {{ form.phone(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.vehicle_type.label(class="form-control-label") }}
+            {{ form.vehicle_type(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.vehicle_id.label(class="form-control-label") }}
+            {{ form.vehicle_id(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn") }}
+        </div>
+    </fieldset>
+</form>
+
+
+
+<div class="back-button">
+    <a href="/">
+        <button id="back-button">Get back to main menu</button>
+    </a>
 </div>
 
-<form class="form">
+{% endblock %}
+
+
+<!-- <form class="form">
     <label>Name :</label>
     <input type="text" placeholder="Ahmed"><br>
     <br>
@@ -60,17 +99,5 @@
     <br>
     <label>Vehicle ID :</label>
     <input type="number"><br><br>
-    <br>
     <input type="submit">
-</form>
-
-
-
-<div class="back-button">
-    <br>
-    <a href="/">
-        <button>Get back to main menu</button>
-    </a><br><br>
-</div>
-
-{% endblock %}
+</form> -->

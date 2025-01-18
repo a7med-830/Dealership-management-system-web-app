@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a7be11b1b3.js" crossorigin="anonymous"></script>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
     {% if custom_css %}
@@ -13,6 +15,30 @@
 </head>
 <body>
     <h1 class="page_head">{{ page_head }}</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'success' %}
+                    <div class="alert-success">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert-failed">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     {% block body %}{% endblock %}
+
+    <div class="footer">
+        <p id="footer-right" >Ahmed EL-Shekih</p>
+        <a href="https://www.github.com/a7med-830" target="_blank">
+            <p id="footer-left">a7med-830</p>
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
 </body>
 </html>

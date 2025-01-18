@@ -4,19 +4,23 @@
 }
 
 .vehicle-table {
-    width: 30%;
+    width: 100%;
     margin: 20px auto;
     border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-row {
-    background-color: gray;
+    background-color: #3F72AF;
     text-align: center;
     color: white;
 }
 
 .data-rows {
-    background-color: darkgray;
+    background-color: #9ca7ba;
     text-align: center;
 }
 
@@ -36,9 +40,18 @@
 .vehicle-table td {
     border: 1px solid white;
     padding: 8px;
+    text-align: center;
 }
 
-.back-button {
-    text-align: center;
-    margin-top: 20px;
+#tables {
+    border: 2px solid ;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: rgba(219,226,239, 0.5);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    
 }
